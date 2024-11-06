@@ -1,0 +1,8 @@
+Jump = [1-4][T|S|Lo|F|Lz|A][Th]?               # Стрибки і кидкові стрибки
+Spin = (U|L|C|S)Sp | F(U|L|C|S)Sp | FC(U|L|C|S)Sp  # Обертання
+StepSequence = StSq | ChSq                      # Доріжки кроків
+Lift = [1-5][A|B|T|S|R]Li                       # Підйоми
+DeathSpiral = (Fi|Bi|Fo|Bo)Ds                   # Спіралі
+PairSpin = PSp | PCoSp                          # Оберти в парному катанні
+Twizzle = STw                                    # Твізли
+ChoreographicElement = ChLi1 | ChSp1            # Хореографічні елементи
