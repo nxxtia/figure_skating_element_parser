@@ -1,5 +1,8 @@
 # Figure Skating Element Parser
 
+Link: [https://crates.io/crates/url_pest_parser](https://crates.io/crates/figure_skating_element_parser/0.1.0) 
+Docs: [https://docs.rs/url_pest_parser/latest/url_pest_parser/](https://docs.rs/figure_skating_element_parser/0.1.0/figure_skating_element_parser/)
+
 ## Project Description
 
 This project is a parser for figure skating elements that complies with ISU (International Skating Union) standards. It automatically recognizes and classifies technical elements of figure skating, such as jumps, spins, and step sequences. The parser reads abbreviations used in the ISU judging system and converts them into a structured format suitable for analysis and use in various applications.
