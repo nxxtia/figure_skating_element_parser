@@ -1,8 +1,30 @@
-Jump = [1-4][T|S|Lo|F|Lz|A][Th]?               # Стрибки і кидкові стрибки
-Spin = (U|L|C|S)Sp | F(U|L|C|S)Sp | FC(U|L|C|S)Sp  # Обертання
-StepSequence = StSq | ChSq                      # Доріжки кроків
-Lift = [1-5][A|B|T|S|R]Li                       # Підйоми
-DeathSpiral = (Fi|Bi|Fo|Bo)Ds                   # Спіралі
-PairSpin = PSp | PCoSp                          # Оберти в парному катанні
-Twizzle = STw                                    # Твізли
-ChoreographicElement = ChLi1 | ChSp1            # Хореографічні елементи
+WHITESPACE = _{ " " | "\t" | "\n" }
+
+DIGIT = _{ ASCII_DIGIT }
+LETTER = _{ ASCII_ALPHANUMERIC }
+ALLOWED_SYMBOL = _{ LETTER | "-" | "_" }
+
+element = { jump | spin | step_sequence | lift | death_spiral | pair_spin | twizzle | choreographic_element }
+
+jump = { [1-4] ~ jump_type ~ throw_jump? }
+jump_type = { "T" | "S" | "Lo" | "F" | "Lz" | "A" }
+throw_jump = { "Th" }
+
+spin = { (spin_position ~ "Sp") | flying_spin | flying_change_foot_spin }
+spin_position = { "U" | "L" | "C" | "S" }
+flying_spin = { "F" ~ spin_position ~ "Sp" }
+flying_change_foot_spin = { "FC" ~ spin_position ~ "Sp" }
+
+step_sequence = { "StSq" | "ChSq" }
+
+lift = { [1-5] ~ lift_type ~ "Li" }
+lift_type = { "A" | "B" | "T" | "S" | "R" }
+
+death_spiral = { death_spiral_position ~ "Ds" }
+death_spiral_position = { "Fi" | "Bi" | "Fo" | "Bo" }
+
+pair_spin = { "PSp" | "PCoSp" }
+
+twizzle = { "STw" }
+
+choreographic_element = { "ChLi1" | "ChSp1" }
