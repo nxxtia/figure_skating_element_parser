@@ -80,7 +80,7 @@ The Makefile includes commands to simplify working with the project:
 
 1. Clone the repository:
 ```
-git clone [<repository URL>](https://github.com/nxxtia/figure_skating_element_parser/tree/main)
+git clone [<repository URL>](https://github.com/nxxtia/figure_skating_element_parser)
 cd figure_skating_element_parser
 ```
 
