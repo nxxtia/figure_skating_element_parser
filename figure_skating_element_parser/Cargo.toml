@@ -5,5 +5,10 @@ authors = ["Anastasiia Chyzhova"]
 edition = "2021"
 license = "MIT"
 description = "A parser for recognizing and structuring figure skating elements according to ISU standards."
+readme = "README.md"
 
 [dependencies]
+pest = "2.7.14"
+pest_derive = "2.7.14"
+anyhow = "1.0.93"
+thiserror = "2.0.0"
