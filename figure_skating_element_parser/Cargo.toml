@@ -5,6 +5,7 @@ authors = ["Anastasiia Chyzhova"]
 edition = "2021"
 license = "MIT"
 description = "A parser for recognizing and structuring figure skating elements according to ISU standards."
+repository = "https://github.com/nxxtia/figure_skating_element_parser"
 readme = "README.md"
 
 [dependencies]
