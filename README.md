@@ -22,6 +22,41 @@ ChSq — choreographic step sequence.
 Death spirals (e.g., FiDs, BoDs),
 Twizzles (e.g., STw).
 
+## Grammar Structure
+
+Below is the formal grammar structure used by the parser to recognize each category of elements.
+```
+WHITESPACE = _{ " " | "\t" | "\n" }
+
+DIGIT = { "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" }
+LETTER = _{ ASCII_ALPHANUMERIC }
+ALLOWED_SYMBOL = _{ LETTER | "-" | "_" }
+
+elements = { element ~ (WHITESPACE+ ~ element)* }
+
+element = { jump | spin | step_sequence | death_spiral | pair_spin | twizzle | choreographic_element }
+
+jump = { ("1" | "2" | "3" | "4") ~ jump_type ~ throw_jump? }
+jump_type = { "T" | "S" | "Lo" | "F" | "Lz" | "A" }
+throw_jump = { "Th" }
+
+spin = { (spin_position ~ "Sp") | flying_spin | flying_change_foot_spin }
+spin_position = { "U" | "L" | "C" | "S" }
+flying_spin = { "F" ~ spin_position ~ "Sp" }
+flying_change_foot_spin = { "FC" ~ spin_position ~ "Sp" }
+
+step_sequence = { "StSq" | "ChSq" }
+
+death_spiral = { death_spiral_position ~ "Ds" }
+death_spiral_position = { "Fi" | "Bi" | "Fo" | "Bo" }
+
+pair_spin = { "PSp" | "PCoSp" }
+
+twizzle = { "STw" }
+
+choreographic_element = { "ChLi1" | "ChSp1" }
+```
+
 ## Usage of Parsing Results
 
 The parsing results can be used to create performance protocols for skaters, automate performance analysis, develop scoring systems, or serve as a basis for analytics and training programs.
