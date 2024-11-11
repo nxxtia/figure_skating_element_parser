@@ -35,7 +35,7 @@ The parsing results can be used to create performance protocols for skaters, aut
 
 The Makefile includes commands to simplify working with the project:
 
--**fmt**: formats code using cargo fmt.
+- **fmt**: formats code using cargo fmt.
 - **clippy**: runs code linting with cargo clippy.
 - **test**: runs unit tests using cargo test.
 - **build**: builds the project.
