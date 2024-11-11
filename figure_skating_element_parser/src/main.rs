@@ -1,6 +1,6 @@
-use std::{env, fs};
-use figure_skating_element_parser::*;
 use anyhow::{Context, Result};
+use figure_skating_element_parser::*;
+use std::{env, fs};
 
 fn show_usage() {
     println!(
@@ -18,14 +18,19 @@ fn display_credits() {
 fn analyze_file(file_path: &str) -> Result<()> {
     let file_content = fs::read_to_string(file_path)
         .with_context(|| format!("Could not read file: {}", file_path))?;
-    
-    let parsed_elements = parse_elements(&file_content)
-        .context("Parsing skating elements failed")?;
+
+    let parsed_elements =
+        parse_elements(&file_content).context("Parsing skating elements failed")?;
 
     println!("Parsed Skating Elements:");
-    parsed_elements.iter().for_each(|element| println!("{:#?}", element));
+    parsed_elements
+        .iter()
+        .for_each(|element| println!("{:#?}", element));
 
-    let total_value: f32 = parsed_elements.iter().map(|element| element.base_value).sum();
+    let total_value: f32 = parsed_elements
+        .iter()
+        .map(|element| element.base_value)
+        .sum();
     println!("Base sum of elements: {:.1}", total_value);
 
     Ok(())

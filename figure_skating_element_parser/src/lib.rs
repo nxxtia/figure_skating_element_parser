@@ -90,7 +90,6 @@ impl ParsedElement {
     }
 }
 
-
 fn get_full_name(code: &str) -> String {
     match code {
         // Jump types
@@ -118,7 +117,7 @@ fn get_full_name(code: &str) -> String {
         "2A" => "Double Axel".to_string(),
         "3A" => "Triple Axel".to_string(),
         "4A" => "Quad Axel".to_string(),
-        
+
         // Spin types
         "USp" => "Upright Spin".to_string(),
         "LSp" => "Layback Spin".to_string(),
@@ -129,28 +128,28 @@ fn get_full_name(code: &str) -> String {
         "FCSp" => "Flying Camel Spin".to_string(),
         "FSSp" => "Flying Sit Spin".to_string(),
         "FCCSp" => "Flying Change Foot Camel Spin".to_string(),
-        
+
         // Step sequences
         "StSq" => "Step Sequence".to_string(),
         "ChSq" => "Choreographic Sequence".to_string(),
-        
+
         // Death spirals
         "FiDs" => "Forward Inside Death Spiral".to_string(),
         "BiDs" => "Backward Inside Death Spiral".to_string(),
         "FoDs" => "Forward Outside Death Spiral".to_string(),
         "BoDs" => "Backward Outside Death Spiral".to_string(),
-        
+
         // Pair spins
         "PSp" => "Pair Spin".to_string(),
         "PCoSp" => "Pair Combination Spin".to_string(),
-        
+
         // Twizzles
         "STw" => "Twizzle".to_string(),
-        
+
         // Choreographic elements
         "ChLi1" => "Choreographic Lift".to_string(),
         "ChSp1" => "Choreographic Spinning Movement".to_string(),
-        
+
         _ => "Unknown Element".to_string(),
     }
 }
