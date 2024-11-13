@@ -40,7 +40,6 @@ mod tests {
                 .expect("Failed to parse elements with whitespace");
             assert_eq!(result.len(), 4);
 
-            // Перевіряємо кожен елемент на коректність
             assert_eq!(result[0].element_type, "Jump");
             assert_eq!(result[0].full_name, "Triple Toeloop");
 
