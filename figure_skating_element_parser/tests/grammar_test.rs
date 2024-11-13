@@ -31,6 +31,32 @@ mod tests {
         }
     }
 
+    mod whitespace {
+        use super::*;
+
+        #[test]
+        fn elements_with_whitespace() -> Result<()> {
+            let result = parse_elements("3T  StSq  4Lo  FiDs")
+                .expect("Failed to parse elements with whitespace");
+            assert_eq!(result.len(), 4);
+
+            // Перевіряємо кожен елемент на коректність
+            assert_eq!(result[0].element_type, "Jump");
+            assert_eq!(result[0].full_name, "Triple Toeloop");
+
+            assert_eq!(result[1].element_type, "Step Sequence");
+            assert_eq!(result[1].full_name, "Step Sequence");
+
+            assert_eq!(result[2].element_type, "Jump");
+            assert_eq!(result[2].full_name, "Quad Loop");
+
+            assert_eq!(result[3].element_type, "Death Spiral");
+            assert_eq!(result[3].full_name, "Forward Inside Death Spiral");
+
+            Ok(())
+        }
+    }
+
     mod spin {
         use super::*;
 
